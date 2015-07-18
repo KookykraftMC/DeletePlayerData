@@ -8,7 +8,7 @@ All builds for my plugins can be found at this link: http://kaikk.net/mc/
 Just drop the jar to plugins folder.
 
 ###Usage
-/deleteplayerdata <PlayerName>
+/deleteplayerdata (PlayerName)
 
 ##Support my life!
 I'm currently unemployed and I'm studying at University (Computer Science).
