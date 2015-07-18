@@ -1,0 +1,16 @@
+name: ${name}
+main: ${package}.${name}
+version: ${version}
+author: KaiNoMood
+
+commands:
+   deleteplayerdata:
+      description: Manage
+
+permissions:
+    deleteplayerdata.self:
+        description: Delete your own player data
+        default: op
+    deleteplayerdata.others:
+        description: Delete others player data
+        default: op
