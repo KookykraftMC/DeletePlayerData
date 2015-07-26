@@ -45,7 +45,7 @@ public class CommandExec implements CommandExecutor {
 				playerToDelete = instance.getServer().getPlayer(args[0]);
 			}
 			
-			if (!playerToDelete.hasPlayedBefore()) {
+			if (playerToDelete==null || !playerToDelete.hasPlayedBefore()) {
 				sender.sendMessage("This player has never played before on this server.");
 				return false;
 			}
