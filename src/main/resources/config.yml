@@ -1,0 +1,2 @@
+# playerdata folder path. It can be relative to the server folder.
+PlayerDataPath: autodetect

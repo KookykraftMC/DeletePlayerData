@@ -46,7 +46,7 @@ public class CommandExec implements CommandExecutor {
 			}
 			
 			if (playerToDelete==null || !playerToDelete.hasPlayedBefore()) {
-				sender.sendMessage("This player has never played before on this server.");
+				sender.sendMessage("No player data found on this server.");
 				return false;
 			}
 			
@@ -61,16 +61,16 @@ public class CommandExec implements CommandExecutor {
 		return false;
 	}
 	
-	static void scheduleDelete(final UUID uuid) {
+	void scheduleDelete(final UUID uuid) {
 		final String uuidString = uuid.toString();
 		new BukkitRunnable() {
 			@Override
 			public void run() {
-				System.out.println("Deleting '"+DeletePlayerData.playerDataDir+"/"+uuidString+".dat'...");
+				instance.getLogger().info("Deleting '"+instance.config.playerDataPath+"/"+uuidString+".dat'...");
 				
-				File file = new File(DeletePlayerData.playerDataDir+File.separator+uuidString+".dat");
+				File file = new File(instance.config.playerDataPath+File.separator+uuidString+".dat");
 				if (file.delete()) {
-					System.out.println("Deleted '"+DeletePlayerData.playerDataDir+"/"+uuidString+".dat'!");
+					instance.getLogger().info("Deleted '"+instance.config.playerDataPath+"/"+uuidString+".dat'!");
 					this.cancel();
 				}
 			}
