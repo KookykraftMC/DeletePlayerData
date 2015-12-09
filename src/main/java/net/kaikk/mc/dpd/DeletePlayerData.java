@@ -9,6 +9,7 @@ public class DeletePlayerData extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		instance=this;
+		config = new Config(this);
 		this.getCommand("deleteplayerdata").setExecutor(new CommandExec(this));
 	}
 }
